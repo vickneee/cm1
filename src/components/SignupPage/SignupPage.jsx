@@ -24,6 +24,11 @@ const SignupPage = () => {
     setPasswordStrong(value === "" ? null : validatePassword(value));
   };
   
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add form submission logic here (e.g., API call)
+  // };
+  
   const greetings = {
     fi: "Moi",
     en: "Hello",
@@ -108,7 +113,7 @@ const SignupPage = () => {
           </div>
           <button
               type="submit"
-              className="sign-up-btn w-full mb-4 mt-4 text-white py-2 rounded transition duration-200">
+              className="sign-up-btn w-full mb-4 mt-10 text-white py-2 rounded transition duration-200">
             Sign Up
           </button>
           <hr />
