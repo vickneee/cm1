@@ -24,6 +24,11 @@ const SignupPage = () => {
     setPasswordStrong(value === "" ? null : validatePassword(value));
   };
   
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add form submission logic here (e.g., API call)
+  // };
+  
   const greetings = {
     fi: "Moi",
     en: "Hello",
@@ -61,14 +66,11 @@ const SignupPage = () => {
                             : "border-red-500"
                 }`}
             />
-            {emailValid === false && (
-                <p>Invalid email address</p>
-            )}
-            {emailValid === true && (
-                <p>You typed a valid email</p>
-            )}
+            <p className={`h-5 text-sm ${emailValid === null ? "text-transparent" : emailValid ? "text-green-600" : "text-red-600"}`}>
+              {emailValid === null ? "" : emailValid ? "✔ Valid email" : "✖ Invalid email address"}
+            </p>
           </div>
-          <div className="mb-8">
+          <div className="">
             <label className="block text-sm font-semibold mb-1"
                 htmlFor="password">
               Password
@@ -88,12 +90,9 @@ const SignupPage = () => {
                             : "border-red-500"
                 }`}
             />
-            {passwordStrong === false && (
-                <p>Your password is too weak</p>
-            )}
-            {passwordStrong === true && (
-                <p >Strong password</p>
-            )}
+            <p className={`h-5 text-sm ${passwordStrong === null ? "text-transparent" : passwordStrong ? "text-green-600" : "text-red-600"}`}>
+              {passwordStrong === null ? "" : passwordStrong ? "✔ Valid password" : "✖ Invalid password"}
+            </p>
           </div>
           <div>
             <label className="block text-sm font-semibold mb-1"
@@ -114,7 +113,7 @@ const SignupPage = () => {
           </div>
           <button
               type="submit"
-              className="sign-up-btn w-full mb-4 mt-4 text-white py-2 rounded transition duration-200">
+              className="sign-up-btn w-full mb-4 mt-10 text-white py-2 rounded transition duration-200">
             Sign Up
           </button>
           <hr />

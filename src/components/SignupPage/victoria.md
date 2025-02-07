@@ -16,23 +16,26 @@ const handleSubmit = (e) => {
 
 ---
 
+### Set a Fixed Height for the Message
+
+To keep the space for the validation message even when it’s not displayed, you can always render an empty <p> tag with a fixed height. This prevents the layout from shifting when the message appears.
+
+
 ### Improve Email & Password Validation Messages
 
 Instead of showing both "Invalid email address" and "You typed a valid email", show only one message:
 
 Before: (Both messages might appear)
-```javascript
+```jsx
 {emailValid === false && <p>Invalid email address</p>}
 {emailValid === true && <p>You typed a valid email</p>}
 ```
 
 Better Approach: (Show one at a time)
-```javascript
-{emailValid !== null && (
-  <p className={emailValid ? "text-green-600" : "text-red-600"}>
-    {emailValid ? "✔ Valid email" : "✖ Invalid email address"}
-  </p>
-)}
+```jsx
+<p className={`h-5 text-sm ${emailValid === null ? "text-transparent" : emailValid ? "text-green-600" : "text-red-600"}`}>
+  {emailValid === null ? "" : emailValid ? "✔ Valid email" : "✖ Invalid email"}
+</p>
 ```
 ✔ Same for password validation!
 
