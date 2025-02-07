@@ -1,0 +1,100 @@
+.Rec {
+    font-family: 'Arial', sans-serif;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #299d8a;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    border: 1px solid #e3e3e3;
+}
+
+.Rec h2 {
+    text-align: center;
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.Rec form input,
+.Rec form textarea,
+.Rec form button {
+    padding: 16px;
+    margin: 12px 0;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    font-size: 18px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Rec form input:focus,
+.Rec form textarea:focus,
+.Rec form button:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.Rec form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.Rec form button {
+    background-color: #bd220a;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.Rec form button:hover {
+    background-color: #c81717;
+    transform: translateY(-2px);
+}
+
+.Rec ul {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.Rec li {
+    padding: 18px;
+    background-color: #ffffff;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.Rec li:hover {
+    transform: translateY(-3px);
+    background-color: #e0e8f1;
+}
+
+.Rec li button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Rec li button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}

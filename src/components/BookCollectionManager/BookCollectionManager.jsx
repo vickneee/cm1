@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./BookCollectionManager.css"
+import "./BookCollectionManager.css";
 
 function BookCollectionManager() {
   const [books, setBooks] = useState([]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [year, setYear] = useState("");
 
   // Handle input change for title
   function handleTitleChange(event) {
@@ -16,12 +17,18 @@ function BookCollectionManager() {
     setAuthor(event.target.value);
   }
 
+  // Handle input change for publication year
+  function handleYearChange(event) {
+    setYear(event.target.value);
+  }
+
   // Add a new book to the list
   function addBook() {
-    if (title.trim() !== "" && author.trim() !== "") {
-      setBooks((b) => [...b, { title, author }]);
+    if (title.trim() !== "" && author.trim() !== "" && year.trim() !== "") {
+      setBooks((b) => [...b, { title, author, year }]);
       setTitle("");
-      setAuthor(""); // Clear the input fields
+      setAuthor("");
+      setYear("");
     }
   }
 
@@ -47,12 +54,18 @@ function BookCollectionManager() {
           value={author}
           onChange={handleAuthorChange}
         />
+        <input
+          type="text"
+          placeholder="Enter publication year..."
+          value={year}
+          onChange={handleYearChange}
+        />
         <button onClick={addBook}>Add Book</button>
       </div>
       <ol>
         {books.map((book, index) => (
           <li key={index}>
-            {book.title} by {book.author}
+            {book.title} by {book.author} (Published: {book.year})
             <button onClick={() => deleteBook(index)}>Delete</button>
           </li>
         ))}
