@@ -39,11 +39,11 @@ const SignupPage = () => {
   };
   
   return (
-      <div>
-        <h2>Sign Up</h2>
+      <div className="sign-in-container">
+        <h2 className="text-3xl font-bold mt-4">Sign Up</h2>
         <form>
-          <div className="mb-8">
-            <label htmlFor="email">
+          <div className="">
+            <label className="block text-sm font-semibold mb-1" htmlFor="email">
               Email
             </label>
             <input
@@ -53,6 +53,13 @@ const SignupPage = () => {
                 placeholder="username@gmail.com"
                 value={email}
                 onChange={handleEmailChange}
+                className={`w-full px-3 py-2 rounded bg-white border ${
+                    emailValid === null
+                        ? "border-gray-300"
+                        : emailValid
+                            ? "border-green-500"
+                            : "border-red-500"
+                }`}
             />
             {emailValid === false && (
                 <p>Invalid email address</p>
@@ -61,8 +68,8 @@ const SignupPage = () => {
                 <p>You typed a valid email</p>
             )}
           </div>
-          <div>
-            <label
+          <div className="mb-8">
+            <label className="block text-sm font-semibold mb-1"
                 htmlFor="password">
               Password
             </label>
@@ -73,6 +80,13 @@ const SignupPage = () => {
                 placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
+                className={`w-full px-3 py-2 rounded bg-white border ${
+                    passwordStrong === null
+                        ? "border-gray-300"
+                        : passwordStrong
+                            ? "border-green-500"
+                            : "border-red-500"
+                }`}
             />
             {passwordStrong === false && (
                 <p>Your password is too weak</p>
@@ -82,7 +96,7 @@ const SignupPage = () => {
             )}
           </div>
           <div>
-            <label
+            <label className="block text-sm font-semibold mb-1"
                 htmlFor="nationality">
               Nationality
             </label>
@@ -90,7 +104,8 @@ const SignupPage = () => {
                 id="nationality"
                 name="nationality"
                 value={nationality}
-                onChange={(e) => setNationality(e.target.value)}>
+                onChange={(e) => setNationality(e.target.value)}
+                className="w-full px-3 py-2 border rounded border-gray-300">
               <option value="fi">Finnish</option>
               <option value="en">English</option>
               <option value="de">German</option>
@@ -98,12 +113,13 @@ const SignupPage = () => {
             </select>
           </div>
           <button
-              type="submit">
+              type="submit"
+              className="sign-up-btn w-full mb-4 mt-4 text-white py-2 rounded transition duration-200">
             Sign Up
           </button>
           <hr />
-          <p>{greetings[nationality]}</p>
-          <p >
+          <p className="text-lg mb-4 mt-4">{greetings[nationality]}</p>
+          <p className="text-lg mb-4">
             {yourEmailIs[nationality]} {email}
           </p>
         </form>
