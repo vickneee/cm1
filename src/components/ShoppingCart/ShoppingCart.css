@@ -31,7 +31,7 @@
   /* Cart Badge */
   .cart-badge {
     background: #ff4d4d;
-    color: white;
+    color: rgb(20, 14, 14);
     font-size: 16px;
     padding: 8px 12px;
     border-radius: 50%;
@@ -49,7 +49,7 @@
   
   .cart-form input {
     padding: 12px;
-    border: 2px solid #ccc;
+    border: 2px solid #3e3737;
     border-radius: 8px;
     font-size: 16px;
     width: 100%;
@@ -63,7 +63,7 @@
   .cart-form button.add-btn {
     padding: 12px;
     background: linear-gradient(135deg, #1a73e8, #0d47a1);
-    color: white;
+    color: rgb(25, 5, 5);
     border: none;
     cursor: pointer;
     font-size: 18px;
@@ -97,7 +97,7 @@
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(255, 255, 255);
     color: #111;
     font-size: 18px;
     font-weight: bold;
