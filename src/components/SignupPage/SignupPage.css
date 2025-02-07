@@ -1,12 +1,16 @@
 .sign-in-container {
     font-family: sans-serif;
-    margin: 20px auto; /* Center the container */
+    margin: 0 auto; /* Center the container */
     max-width: 400px; /* Set a maximum width */
-    padding: 20px;
+    /*padding: 20px;*/
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     background-color: #f9f9f9; /* Light background color */
+}
+
+.sign-in-container form > div {
+    margin-bottom: -24px;
 }
 
 .sign-in-container h2 {
